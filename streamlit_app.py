@@ -2,6 +2,9 @@ import streamlit
 import pandas as p
 import requests
 
+#New Section to display fruity api reponse
+streamlit.header('fruityvice FRUIT Advice')
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response)
 
