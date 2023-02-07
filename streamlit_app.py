@@ -1,6 +1,7 @@
 import streamlit
 import pandas as p
 import requests
+import snowflake.connector
 
 
 
