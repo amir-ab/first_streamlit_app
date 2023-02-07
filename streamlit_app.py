@@ -83,4 +83,16 @@ if streamlit.button('Add a Fruit to the List'):
   streamlit.text(back_from_function)
 
   
+def delete_row_snowlfake(deleted_fruti):
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("delete from fruit_load_list where fruit_name like ('" + deleted_fruit + "')
+    return "Fruit " + deleted_fruit + " was deleted !"
+ 
+delete_my_fruit = streamlit.text_input('What fruit would you want to deleted?')
+if streamlit.button('Delete a Fruit from the List'):
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  delete_from_function = insert_row_snowflake(delete_my_fruit)
+  my_cnx.close()
+  streamlit.text(delete_from_function)
+                   
 streamlit.stop()
