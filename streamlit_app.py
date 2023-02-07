@@ -83,7 +83,7 @@ if streamlit.button('Add a Fruit to the List'):
   streamlit.text(back_from_function)
 
   
-def delete_row_snowlfake(deleted_fruti):
+def delete_row_snowlfake(deleted_fruit):
   with my_cnx.cursor() as my_cur:
     my_cur.execute("delete from fruit_load_list where fruit_name like ('" + deleted_fruit + "')
     return "Fruit " + deleted_fruit + " was deleted !"
