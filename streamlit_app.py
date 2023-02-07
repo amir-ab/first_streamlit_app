@@ -91,7 +91,7 @@ def delete_row_snowlfake(deleted_fruit):
 delete_my_fruit = streamlit.text_input('What fruit would you want to deleted?')
 if streamlit.button('Delete a Fruit from the List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-  delete_from_function = insert_row_snowflake(delete_my_fruit)
+  delete_from_function = delete_row_snowlfake(delete_my_fruit)
   my_cnx.close()
   streamlit.text(delete_from_function)
                    
