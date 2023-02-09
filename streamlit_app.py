@@ -94,5 +94,15 @@ if streamlit.button('Delete a Fruit from the List'):
   delete_from_function = delete_row_snowlfake(delete_my_fruit)
   my_cnx.close()
   streamlit.text(delete_from_function)
-                   
+  
 streamlit.stop()
+  
+def update_row_snowlfake(updated_fruit):
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("update fruit_load_list set values where fruit_name like ('" + updated_fruit + "')")
+    return "Fruit " + updated_fruit + " was updated !"
+ 
+
+
+                   
+
