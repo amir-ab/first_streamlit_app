@@ -108,6 +108,21 @@ if streamlit.button('Update a Fruit from the List'):
   update_from_function = update_row_snowlfake(delete_my_fruit)
   my_cnx.close()
   streamlit.text(update_from_function) 
+  
+  update_my_fruit = streamlit.text_input('What fruit would you want to updated?')
+if streamlit.button('Update a Fruit from the List'):
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  update_from_function = update_row_snowlfake(delete_my_fruit)
+  my_cnx.close()
+  streamlit.text(update_from_function) 
+  
+  
+  update_my_fruit = streamlit.text_input('What fruit would you want to updated?')
+if streamlit.button('Update a Fruit from the List'):
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  update_from_function = update_row_snowlfake(delete_my_fruit)
+  my_cnx.close()
+  streamlit.text(update_from_function) 
 
                    
 
